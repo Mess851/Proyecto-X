@@ -1,0 +1,76 @@
+@startuml Mario Bros 
+class SuperMarioBros
+class Videojuego
+class Jugador
+class Personaje
+class Mario
+class Luigi
+class Bloque
+class BloqueDestructible
+class Traje
+class Estrella
+class ContadorDePuntaje 
+class ContadorDeVida
+class Gorra 
+class Overol
+class Bigote 
+class Champiñon
+class Flor 
+class Tuberia
+class PlantaPiraña
+class Peach 
+class Koopa
+class Caparazon
+class Bowser 
+class Mapa 
+class Toad 
+class Goomba
+class Enemigo 
+class ContadorDeMonedas
+class ContadorDeMundos 
+class ContadorDeTiempo
+class Fondo
+class Npc
+class Botas 
+class Alas
+
+SuperMarioBros --|> Videojuego
+Videojuego "1" *-- "*" Fondo
+Videojuego "1" *-- "1,32" Mapa 
+Videojuego "1" *-- "1" ContadorDeMonedas
+Videojuego "1" *-- "1" ContadorDeMundos 
+Videojuego "1" *-- "1" ContadorDeTiempo
+Videojuego "1" *-- "1" ContadorDePuntaje 
+Videojuego "1" *-- "1" ContadorDeVida
+Videojuego "1" *-- "1,2" Jugador
+Videojuego "1" *-- "1,2" Personaje
+Videojuego "1" *-- "2" Npc
+Videojuego "1" *-- "*" Enemigo
+Videojuego "1" *-- "*" Tuberia
+
+Mapa "1" *-- "*" Bloque 
+Mapa "1" *-- "*" BloqueDestructible
+Jugador "1" o-- "1" Personaje
+Mario "1" --|> "1" Personaje
+Luigi "1" --|> "1" Personaje
+
+Peach "1" --|> "1" Npc
+Toad "1" --|> "1" Npc
+
+Bowser "1" --|> "1" Enemigo
+Koopa "1" --|> "1" Enemigo
+Goomba "1" --|> "1" Enemigo
+PlantaPiraña "1" --|> "1" Enemigo
+
+Koopa "1" *-- "1" Caparazon
+koopa "1" o-- "2" Botas
+Koopa "1" *-- "2" Alas
+
+Mario "1" o-- "1" Overol
+Mario "1" *-- "1" Bigote
+Mario "1" o-- "1" Gorra 
+Mario "1" o-- "1" Traje
+Mario "1" o-- "1" Estrella
+Mario "1" o-- "1,*" Champiñon
+Mario "1" o-- "1" Flor
+Mario "1" o-- "2" Botas
