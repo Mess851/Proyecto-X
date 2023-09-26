@@ -4,7 +4,7 @@
 int main(int argc, char const *argv[])
 {
     std::cout << "Juego de Mascotas" << std::endl;
-
+//Hola
     Mascota m1,m2,m3;
 
     m1.EstablecerNombre("Rudeus");
