@@ -1,19 +1,52 @@
 #include <iostream>
-#include <Mascota.hpp>
+#include <string>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
+#include <Ventana.hpp>
+#include <list>
+#include <curses.h>
+#include <Mario.hpp>
+
+using namespace std;
+
+class Demo{
+    private:
+    int x;
+    int y;
+};
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Juego de Mascotas" << std::endl;
-//Hola
-    Mascota m1,m2,m3;
+    Mario* mario = new Mario(10,5);
 
-    m1.EstablecerNombre("Rudeus");
-    m2.EstablecerNombre("Rengar");
-    m3.EstablecerNombre("Zeus");
+    Ventana* ventana = new Ventana();
 
-    m1.DecirNombre();
-    m2.DecirNombre();
-    m3.DecirNombre();
+    list<Dibujo*> dibujos;
+    dibujos.push_back(mario);
+
+    list<Actualizable*> actualizables;
+    actualizables.push_back(mario);
+
+    while(!ventana->DeboCerrar())
+    {
+        int key = getch();
+
+		if (key == 'a' || key == KEY_LEFT){
+			mario->RetrocederX();
+		}
+		if (key == 'd' || key == KEY_RIGHT){
+			mario->AvanzarX();
+		}
+		
+	 	ventana->Dibujar(dibujos);
+	 	ventana->Actualizar(actualizables);
+    }   
+
+
+
+
+   
 
     return 0;
 }
