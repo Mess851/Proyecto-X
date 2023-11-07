@@ -45,7 +45,7 @@ public:
     {
         clear();
 
-        box(stdscr, '|', '*');
+        //box(stdscr, '|', '-');
         for (auto &&dibujo : listaDibujar)
         {
             dibujo->Dibujar();

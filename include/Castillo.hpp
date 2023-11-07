@@ -3,23 +3,19 @@
 #include <Dibujo.hpp>
 #include <Actualizable.hpp>
 
-class Bloque : public Dibujo, public Actualizable
+class Castillo : public Dibujo, public Actualizable
 {
 private:
-    
+    /* data */
 public:
-    Bloque() : Dibujo("bloque") 
+    Castillo() : Dibujo("castillo") 
     {
         this->posicion = Vector();
     }
-    Bloque(int x, int y) : Dibujo("bloque")
+    Castillo(int x, int y) : Dibujo("castillo")
     {
         this->posicion.DesplazarX(x);
         this->posicion.DesplazarY(y);
     }
-    void Actualizar()
-    {
-        //this->posicion.DesplazarX(1);
-    }
-    ~Bloque() {}
+    ~Castillo() {}
 };

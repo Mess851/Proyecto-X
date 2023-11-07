@@ -3,23 +3,19 @@
 #include <Dibujo.hpp>
 #include <Actualizable.hpp>
 
-class Bloque : public Dibujo, public Actualizable
+class Nube : public Dibujo, public Actualizable
 {
 private:
-    
+    /* data */
 public:
-    Bloque() : Dibujo("bloque") 
+    Nube() : Dibujo("nube") 
     {
         this->posicion = Vector();
     }
-    Bloque(int x, int y) : Dibujo("bloque")
+    Nube(int x, int y) : Dibujo("nube")
     {
         this->posicion.DesplazarX(x);
         this->posicion.DesplazarY(y);
     }
-    void Actualizar()
-    {
-        //this->posicion.DesplazarX(1);
-    }
-    ~Bloque() {}
+    ~Nube() {}
 };
